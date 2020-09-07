@@ -10,6 +10,7 @@ public class Main
         task4(args);
         task5();
         task6();
+        task7();
     }
     public static void task3()
     {
@@ -85,10 +86,49 @@ public class Main
             System.out.print(a[i] + " ");
         }
         System.out.println();
+        double[] c = new double[5];
+        Random rand = new Random();
+        System.out.print("MassRand: ");
+        for (int i = 0; i < c.length; i++)
+        {
+            c[i] = rand.nextDouble()*100;
+            System.out.print(c[i] + " ");
+        }
+        System.out.println();
+        for (int i = 0; i < c.length; i++)
+        {
+            int pos = i;
+            double min = c[i];
+            for (int j = i + 1; j < c.length; j++)
+            {
+                if (c[j] < min)
+                {
+                    pos = j;
+                    min = c[j];
+                }
+            }
+            c[pos] = c[i];
+            c[i] = min;
+        }
+        System.out.print("sortMassRand: ");
+        for (int i = 0; i < c.length; i++)
+        {
+            System.out.print(c[i] + " ");
+        }
+        System.out.println();
     }
     public static void task7()
     {
-
+        System.out.println("faqtorial of 10 is: " + faq(10));
+    }
+    public static int faq(int n)
+    {
+        int a = 1;
+        for (int i = 2; i < n+1; i++)
+        {
+            a *= i;
+        }
+        return a;
     }
 }
 
