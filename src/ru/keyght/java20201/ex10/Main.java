@@ -1,7 +1,5 @@
 package ru.keyght.java20201.ex10;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Scanner;
 
 public class Main {
@@ -91,10 +89,9 @@ public class Main {
     public static void sixth() {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        recursive(n, 2);
+        sixthRec(n, 2);
     }
-
-    public static int recursive(int n, int i) {
+    public static int sixthRec(int n, int i) {
         if (n < 2) {
             System.out.println("NO");
         } else if (n == 2) {
@@ -102,7 +99,7 @@ public class Main {
         } else if (n % i == 0) {
             System.out.println("NO");
         } else if (i < Math.sqrt(n)) {
-            return recursive(n, i + 1);
+            return sixthRec(n, i + 1);
         } else {
             System.out.println("YES");
         }
@@ -112,26 +109,24 @@ public class Main {
     public static void seventh() {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        prostMnoj(n, 2);
+        seventhRec(n, 2);
     }
-
-    public static int prostMnoj(int n1, int n) {
+    public static int seventhRec(int n1, int n) {
         int t;
-        t = prost_c(n, 2);
+        t = seventhRecRec(n, 2);
         if (t == 0) return 0;
         if (n1 % t == 0 || n1 == 1) {
             System.out.println(t);
             n1 = n1 / t;
             if (n1 == 1) return 0;
-            prostMnoj(n1, 2);
-        } else prostMnoj(n1, t + 1);
+            seventhRec(n1, 2);
+        } else seventhRec(n1, t + 1);
         return 0;
     }
-
-    public static int prost_c(int n, int k) {
+    public static int seventhRecRec(int n, int k) {
         if ((n == 2) || (n % k != 0) && (k >= Math.sqrt(n))) return n;
-        else if (k < Math.sqrt(n)) prost_c(n, k + 1);
-        else prost_c(n + 1, 2);
+        else if (k < Math.sqrt(n)) seventhRecRec(n, k + 1);
+        else seventhRecRec(n + 1, 2);
         return n;
     }
 
@@ -151,7 +146,6 @@ public class Main {
         int b = in.nextInt();
         System.out.println(nineRec(a, b));
     }
-
     public static int nineRec(int a, int b) {
         if (a > b + 1) {
             return 0;
@@ -168,7 +162,6 @@ public class Main {
         int n = in.nextInt();
         System.out.println(tenRec(n, 0));
     }
-
     public static int tenRec(int n, int i) {
         // return (n==0) ? i : tenRec( n/10, i*10 + n%10 );
         if (n == 0) return i;
@@ -213,7 +206,6 @@ public class Main {
         int n = in.nextInt();
         fourteenthRec(n);
     }
-
     public static int fourteenthRec(int n) {
         if (n >= 10) fourteenthRec(n / 10);
         System.out.print(n % 10 + " ");
@@ -225,7 +217,6 @@ public class Main {
         int n = in.nextInt();
         fifteenthRec(n);
     }
-
     public static int fifteenthRec(int n) {
         if (n == 0) return 0;
         System.out.print((n % 10) + " ");
