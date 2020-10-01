@@ -40,7 +40,7 @@ public class Main {
         al3.add(new Student(1,2));
         System.out.println(al3.size());
         for (int i = 0; i < 6; i++) {
-            System.out.print(al3.get(i)+" ");
+            System.out.print(al3.get(i).getAverage()+" ");
         }
     }
 }
