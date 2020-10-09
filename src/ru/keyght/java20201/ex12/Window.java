@@ -12,7 +12,7 @@ public class Window extends JFrame {
     }
 
     public void createGUI() {
-        JFrame frame = new JFrame("Map");
+        JFrame frame = new JFrame("Planets");
 
         JPanel panel = new JPanel();
         panel.setLayout(null);
